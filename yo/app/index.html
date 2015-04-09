@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="no-js" ng-app="app" ng-class="{expanded : expanded()}" ng-controller="PageCtrl">
+    <head>
+        <meta charset="utf-8">
+        <title translate="START_TEXT"></title>
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" translate translate-attr-content="DESCRIPTION"/>
+        <meta name="google-site-verification" content="xNBPDw8wlC8_7_HeQcu2b4GOu4-VcAzKpkNXO-HZSJM" />
+        <link rel="shortcut icon" href="/08a427e4.favicon.ico?v=3">
+        <meta name="fragment" content="!">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.) styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+        <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="bower_components/angular-typewrite/dist/angular-typewrite.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body data-spy="scroll" data-target="#sidebar" data-offset="60">
+        <div id="sidebar" ng-controller="SidebarCtrl">
+            <ul id="nav" class="nav navigation" role="navigation">
+                <li class="menu-icon"><a ng-click="toggleMenu()" class="btn-navbar"><i class="fa fa-bars"></i></a></li>
+                <li class="menu-icon"><a href="#home"><i class="fa fa-home"></i><span translate>HOME_NAVBAR</span></a></li>
+                <li class="menu-icon"><a href="#about"><i class="fa fa-user"></i><span translate>ABOUT_NAVBAR</span></a></li>
+                <li class="menu-icon"><a href="#procedure"><i class="fa fa-repeat"></i><span translate>PROCEDURE_NAVBAR</span></a></li>
+                <li class="menu-icon"><a href="#contact"><i class="fa fa-envelope"></i><span translate>CONTACT_NAVBAR</span></a></li>
+                <hr>
+                <li class="menu-icon"><a ng-click="changeLanguage('sv_SE')" title="{{'SWEDISH' | translate}}"><img class="flag" src="/images/se.svg"><span translate>SWEDISH</span></a></li>
+                <!--<li><a ng-click="changeLanguage('ko_KR')" title="{{'KOREAN' | translate}}"><img class="flag" src="/images/kr.svg"><span translate>ENGLISH</span></a></li>-->
+                <li class="menu-icon"><a ng-click="changeLanguage('en_US')" title="{{'ENGLISH' | translate}}"><img class="flag" src="/images/gb.svg"><span translate>ENGLISH</span></a></li>
+                <hr>
+                <li><h4 class="text-center mark-entry" id="countryTitle">{{selectedCountry.name}}</h4></li>
+                <li class="mark-entry-message" ng-repeat="message in messages">
+                    <p>
+                        <span am-time-ago="message.date"></span><br>
+                        {{message.message}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid" id="home">
+            <div class="row vertical-align">
+                <div class="col-md-10 col-md-offset-1">
+                    <h1 class="cover-heading">
+                        <span ng-if="start" typewrite type-delay="40" text="start" callback-fn="setFinished()">
+                    </h1>
+                    <p class="lead cover-description" ng-class="{'fadeInUp animated' : finishedTyping}" translate>START_TEXT</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 scroll-down text-center">
+                    <a href="#about" class="btn scroll btn-outline-dark" ng-class="{'fadeInUp animated' : finishedTyping}">
+                    <span translate>SCROLL_DOWN</span>
+                    <i class="fa fa-arrow-circle-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row text-center" id="about">
+                <div class="col-md-12">
+                    <div class="col-md-12 ">
+                        <h2 translate>INTRODUCTION</h2>
+                        <div class="col-md-4 col-md-offset-4">
+                            <img class="portrait " src="/images/jag.png" alt="...">
+                        </div>
+                        <p class="lead col-md-12" translate>
+                        INTRODUCTION_TEXT
+                        </p>
+                        <p class="col-md-12" translate>
+                        DESCRIPTION
+                        </p>
+                        </br>
+                    </div>
+                    <div class="col-md-12" id="knowledge">
+                        <div class="col-md-6">
+                            <div class="toolbox-header">HTML5 / CSS3</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">95% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Javascript / jQuery</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">95% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Sass / Compass / LESS</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Bootstrap</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">95% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Angular JS</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">85% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header"> Yeoman, Grunt, Bower</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">85% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="toolbox-header">Git / SVN</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Java / Spring MVC / Spring Boot / Spring Security</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">MySQL / Hibernate / Spring Data JPA</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Photoshop / Illustrator</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">50% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">IntelliJ / Atom / OSX </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">75% Complete</span>
+                                </div>
+                            </div>
+                            <div class="toolbox-header">Scrum / Agile Development</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                    <span class="sr-only">75% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center" id="portfolio">
+                <div class="col-md-12">
+                    <h2 translate>PROJECTS</h2>
+                    <p class="lead" translate>PROJECTS_TEXT</p>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="0.2s">
+                        <div class="thumbnail">
+                            <a href="http://www.mimswell.net" target="_blank"><img src="/images/mimswell.png" alt="..."></a>
+                            <div class="caption">
+                                <h3>Mimswell</h3>
+                                <p><span translate>MIMSWELL_TEXT</span><span translate>FRONTEND_BACKEND</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.2s">
+                        <div class="thumbnail">
+                            <a href="http://flyttfint.herokuapp.com" target="_blank"><img src="/images/flyttfint.png" alt="..."></a>
+                            <div class="caption">
+                                <h3>Flyttfint</h3>
+                                <p><span translate>FLYTTFINT_TEXT</span><span translate>FRONTEND_BACKEND</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.9s" data-wow-duration="0.2s">
+                        <div class="thumbnail">
+                            <a href="https://github.com/sonyxperiadev/BacklogTool/" target="_blank"><img src="/images/backlogtool.png" alt="..."></a>
+                            <div class="caption">
+                                <h3>Backlogtool</h3>
+                                <p><span translate>BACKLOGTOOL_TEXT</span><span translate>FRONTEND_BACKEND_CO</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="procedure">
+                <div class="col-md-12 text-center">
+                    <h2 translate>PROCEDURE</h2>
+                    <p class="lead" translate>
+                    PROCEDURE_TEXT
+                    </p>
+                    </br>
+                    <div class="col-md-3 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.5s">
+                        <image class="procedure-icon" src="images/speech.svg"></image>
+                        <h3 translate>CONTACT</h3>
+                        <p class="lead" translate>
+                        CONTACT_TEXT
+                        </p>
+                    </div>
+                    <div class="col-md-3 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.4s">
+                        <image class="procedure-icon" src="images/ruler.svg"></image>
+                        <h3 translate>BUILDING</h3>
+                        <p class="lead" translate>
+                        BUILDING_TEXT
+                        </p>
+
+                    </div>
+                    <div class="col-md-3 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.3s">
+                        <image class="procedure-icon" src="images/arrow.svg"></image>
+                        <h3 translate>ITERATIONS</h3>
+                        <p class="lead" translate>
+                        ITERATIONS_TEXT
+                        </p>
+                    </div>
+                    <div class="col-md-3 wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.2s">
+                        <image class="procedure-icon" src="images/checkbox.svg"></image>
+                        <h3 translate>DELIVERING</h3>
+                        <p class="lead" translate>
+                        DELIVERING_TEXT
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    </br>
+                    <h3 translate>OTHERWISE</h3>
+                </div>
+            </div>
+            <div class="row" id="contact">
+                <div class="col-md-12 text-center">
+                    <h2 translate>CHAT</h2>
+                    <p class="lead" translate>CHAT_TEXT</br></p>
+                    <div class="col-lg-8 col-lg-offset-2" ng-controller="ContactCtrl">
+                        <form name="form" ng-submit="submit()" ng-hide="success">
+                            <div class="form-group floating-label-form-group first-form-group">
+                                <label translate>NAME</label>
+                                <input type="text" name="name" class="form-control" placeholder = "{{'NAME' | translate}}" id="name" ng-model="formData.name" required>
+                                <i ng-if="form.name.$dirty" ng-show="form.name.$error.required" class="form-control-feedback glyphicon glyphicon-remove text-   danger"></i>
+                                <i ng-show="form.name.$valid" class="form-control-feedback glyphicon glyphicon glyphicon-ok text-success"></i>
+                            </div>
+                            <div class="form-group floating-label-form-group">
+                                <label translate>EMAIL</label>
+                                <input type="email" name="email" ng-model="formData.email" class="form-control" placeholder = "{{'EMAIL' | translate}}" required>
+                                <i ng-if="form.email.$dirty" ng-show="form.email.$error.email || form.email.$error.required" class="form-control-feedback glyphicon glyphicon-remove text-danger"></i>
+                                <i ng-show="form.email.$valid" class="form-control-feedback glyphicon glyphicon glyphicon-ok text-success"></i>
+                            </div>
+                            <div class="form-group floating-label-form-group">
+                                <label translate>PHONE</label>
+                                <input type="text" name="number" class="form-control" placeholder = "{{'PHONE' | translate}}" ng-model="formData.number" required>
+                                <i ng-if="form.number.$dirty" ng-show="form.number.$error.required" class="form-control-feedback glyphicon glyphicon-remove text-danger"></i>
+                                <i ng-show="form.number.$valid" class="form-control-feedback glyphicon glyphicon glyphicon-ok text-success"></i>
+                            </div>
+                            <div class="form-group floating-label-form-group">
+                                <label translate>MESSAGE</label>
+                                <textarea type="text" name="message" rows="5" class="form-control" placeholder = "{{'MESSAGE' | translate}}" ng-model="formData.message" required></textarea>
+                                <i ng-if="form.message.$dirty" ng-show="form.message.$error.required" class="form-control-feedback glyphicon glyphicon-remove text-danger"></i>
+                                <i ng-show="form.message.$valid" class="form-control-feedback glyphicon glyphicon glyphicon-ok text-success"></i>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-xs-12 wow bounceIn" data-wow-duration="1s">
+                                    <button type="submit" class="btn btn-xl btn-outline-dark" ng-disabled="form.$invalid" translate>SEND</button>
+                                </div>
+                                <h4 ng-if="error" class="text-danger text-center" translate>ERROR_SENDING</h4>
+                                <h4 ng-show="loading"><i class="fa fa-spinner fa-pulse text-center"></i><span translate>SENDING</span></h4>
+                            </div>
+                        </form>
+                        <h3 ng-show="success" style="margin:50px 0 300px 0"class="text-success text-center" translate>SUCCESS_SENDING</h3>
+                    </div>
+                    <div id="social-div" class="col-md-12 text-center">
+                        <p class="lead"><span translate>SOCIAL_MEDIA</span> <br> <a href="mailto:nil.nicklas@gmail.com" target="_top">nil.nicklas@gmail.com</a></br>
+                        </p>
+                        <a title="Visit LinkedIn profile" href="https://kr.linkedin.com/in/nicklasn" target="_blank">
+                        <i class="fa fa-3x fa-linkedin-square"></i>
+                        </a>
+                        <a title="Visit Github profile"href="https://github.com/nilsi" target="_blank">
+                        <i class="fa fa-3x fa-github"></i>
+                        </a>
+                        <a title="Visit Twitter profile" href="https://twitter.com/nicklasn_com" target="_blank">
+                        <i class="fa fa-3x fa-twitter-square"></i>
+                        </a>
+                        <a title="Visit Stack Overflow profile" href="http://stackoverflow.com/users/804440/nilsi" target="_blank">
+                        <i class="fa fa-3x fa-stack-overflow"></i>
+                        </a>
+                        <a title="Download resume" href="/assets/Nicklas_Nilsson_Resume.pdf" download>
+                        <i class="fa fa-3x fa-download"><img id="arrow" ng-if="start" ng-src="{{'DOWNLOAD_IMAGE' | translate}}"></img></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" ng-controller="MapCtrl">
+            <div class="row" id="map">
+                <div class="text-center col-md-12">
+                    <p class="lead" translate>MAP_DESCRIPTION</br></p>
+                    <form ng-submit="submit()" name="markForm" ng-hide="success">
+                        <div class="input-group col-md-6 col-md-offset-3">
+                            <input type="text" ng-change="setLocation()" class="form-control mark-input" name="message" id="message" ng-model="formData.message" placeholder="{{'MESSAGE' | translate}}" required>
+                            <div class="input-group-addon">
+                                <span id="location" class="fa fa-globe fa-2x" ng-class="{'location-set animated flash':locationSet === true, 'location-not-set animated flash': locationSet === false}" name="location"></span>
+                            </div>
+                            <input type="text" ng-hide="true" ng-model="formData.lat" required>
+                            <input type="text" ng-hide="true" ng-model="formData.long" required>
+                            <input type="text" ng-hide="true" ng-model="formData.country" required>
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" ng-disabled="markForm.$invalid">{{'MARK_MAP' | translate}} <i ng-show="loading" class="fa fa-spinner fa-pulse"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                    <h3 ng-show="success" style="margin:50px 0 50px 0"class="text-success text-center" translate>
+                        THANK_YOU
+                    </h3>
+                    <h3 ng-show="error" style="margin:50px 0 50px 0"class="text-warning text-center" translate>
+                        ERROR
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <p id="leafletMap" leaflet-map></p>
+            </div>
+            <nav class="navbar text-center">
+                <p>2015 © Nicklas Nilsson - <strong translate>OCCUPATION</strong></p>
+            </nav>
+        </div>
+
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/wow/dist/wow.js"></script>
+    <script src="bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/angular-typewrite/dist/angular-typewrite.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-61045542-1');ga('send','pageview');
+    </script>
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/PageCtrl.js"></script>
+    <script src="scripts/controllers/SidebarCtrl.js"></script>
+    <script src="scripts/controllers/MapCtrl.js"></script>
+    <script src="scripts/controllers/ContactCtrl.js"></script>
+    <script src="scripts/directives/leafletMap.js"></script>
+    <script src="scripts/directives/clickMap.js"></script>
+    <script src="scripts/services/SidebarService.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

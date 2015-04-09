@@ -1,0 +1,408 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$brand-primary: #BA2A2A;
+$start-background-color: #F2F3F1;
+$sidebar-color: #EBE9DA;
+$border-color: #BCBBBB;
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@mixin cover-text($fontWeight) {
+    color: $brand-primary;
+    font-weight: $fontWeight;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,900);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+/* Space out content a bit */
+
+body {
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+h2, h3, h4 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 400;
+    color: $brand-primary;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+h2 {
+    font-size: 42px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+p {
+    line-height: 1.8em;
+}
+
+strong {
+    color: $brand-primary;
+}
+
+#social-div .fa {
+    color: $brand-primary;
+    padding: 20px;
+}
+
+#arrow {
+    width: 100px;
+    margin-left: -20px;
+    margin-bottom: -60px;
+}
+
+#social-div {
+    padding-top: 4%;
+}
+
+.navbar {
+    height: 70px;
+}
+
+.navbar p {
+    line-height: 70px;
+}
+
+.cover-heading {
+    font-size: 58px;
+    @include cover-text(800);
+}
+
+.cover-description {
+    visibility: hidden;
+    font-size: 28px;
+    @include cover-text(200);
+}
+
+.scroll {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.animated {
+    visibility: visible !important;
+}
+
+.container, .container-fluid {
+    transition: width 300ms ease 0s;
+    backface-visibility: hidden;
+    position: relative;
+    transform: translate(0px, 0px);
+    width: -moz-calc(100% - 50px);
+    width: -webkit-calc(100% - 50px);
+    width: calc(100% - 50px);
+    float: right;
+}
+
+.container-fluid {
+    background: $start-background-color;
+    min-height: 100%;
+}
+
+.portrait {
+    width: 70%;
+    border-radius: 50%;
+    margin: 10%;
+}
+
+.container > .row {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container > .row:first-child {
+    padding-top: 8%;
+}
+
+.vertical-align {
+    min-height: 90%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+img.procedure-icon {
+    width: 40%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.btn-xl {
+    padding: 18px 28px;
+    font-size: 22px;
+    border-radius: 8px;
+}
+
+.btn-outline-dark {
+    color: #222222;
+    border: 1px solid #222222;
+    background: transparent;
+}
+
+.btn-outline-dark:hover, .btn-outline-dark:focus {
+    color: white;
+    border-color: white;
+    background: $brand-primary;
+    outline: none;
+}
+
+.scroll {
+    width: 220px;
+    visibility: hidden;
+}
+
+.btn {
+    border-radius: 20px;
+    padding: 12px 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+#map .mark-input {
+    height: 45px;
+    border-radius: 20px 0 0 20px;
+}
+
+#map {
+    background: white;
+    padding-top: 10%;
+    padding-bottom: 2%;
+}
+
+.col-md-12 #knowledge {
+    margin-top: 3%;
+}
+
+.progress {
+    height: 7px;
+}
+
+/* Navigation */
+
+hr {
+    border-top: 1px solid $border-color;
+    border-style: dashed !important;
+}
+
+#sidebar {
+    background-color: $sidebar-color;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 300ms ease 0s;
+    width: 50px;
+}
+
+.expanded #nav {
+    position: absolute;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#nav::-webkit-scrollbar {
+    display: none;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav .menu-icon {
+    height: 35px;
+    margin-left: 3px;
+}
+
+#nav .menu-icon span {
+    display: inline-block;
+    font-size: 14px;
+    font-size: 1.4rem;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-left: 10px;
+    width: 0;
+}
+
+#nav li .mark-entry, #nav .mark-entry-message {
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
+
+.btn-navbar {
+    margin-top: 25px;
+}
+
+#nav .fa {
+    position: relative;
+    width: 15px;
+}
+
+.flag {
+    width: 15px;
+}
+
+a:hover, a:hover * {
+    color: #fffff;
+}
+
+#nav a {
+    color: #404040;
+    cursor: pointer;
+}
+
+.nav li.active a, .nav li a:hover, .nav li a:hover,  .nav li a:focus {
+    color: $brand-primary !important;
+    background-color: transparent;
+}
+
+/* Expanded Nav Styling */
+.expanded .container, .expanded .container-fluid {
+    width: -moz-calc(100% - 180px);
+    width: -webkit-calc(100% - 180px);
+    width: calc(100% - 180px);
+}
+
+.expanded #sidebar {
+    width: 180px;
+}
+
+.expanded #nav li span, .expanded #nav .mark-entry,.expanded #nav li.mark-entry-message {
+    transition: all 500ms ease 0.2s;
+    opacity: 1;
+    overflow: visible;
+    width: auto;
+    height: auto;
+}
+
+/* Navigation and Expanded Nav Styling */
+
+/* Form */
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $border-color;
+}
+
+.floating-label-form-group input, .floating-label-form-group textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+    border-radius: 0;
+    font-size: 1.2em;
+    background: none;
+    box-shadow: none !important;
+    resize: none;
+}
+
+.floating-label-form-group label {
+    display: block;
+    z-index: 0;
+    position: relative;
+    top: 2em;
+    margin: 0;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0;
+    -webkit-transition: top 0.5s ease, opacity 0.5s ease;
+    -moz-transition: top 0.5s ease, opacity 0.5s ease;
+    -ms-transition: top 0.5s ease, opacity 0.5s ease;
+    transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.floating-label-form-group-with-value label {
+    top: 0;
+    opacity: 1;
+}
+
+form .floating-label-form-group {
+    border-bottom: 1px solid $border-color;
+}
+
+form .first-form-group {
+    border-top: 1px solid $border-color;
+}
+/* Form end */
+
+/*Map styles*/
+#leafletMap {
+    min-height: 750px;
+    background-color: rgba(129,169,168,.8);
+}
+
+#countryTitle {
+    margin-bottom: 20px;
+    margin-right: 10%;
+}
+
+.mark-entry-message p {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mark-entry-message span {
+    color: $brand-primary;
+    padding: 0;
+    font-size: 12px;
+}
+
+svg {
+    position: relative;
+}
+
+.location-set {
+    color: #3c763d;
+}
+
+.location-not-set {
+    color: rgba(186, 42, 42, 0.8);
+}
+
+path {
+    fill: rgba(186, 42, 42, 0.6);
+    fill-opacity: 0.1;
+    stroke: rgba(232, 232, 232, 0.6);
+    stroke-dasharray: 2,2,2;
+}
+
+path:hover {
+      cursor: pointer;
+}
+
+.form-control:focus {
+    border-color: rgba(129, 169, 168, 0.8);
+    border-width: 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(129, 169, 168, 0.8);
+}

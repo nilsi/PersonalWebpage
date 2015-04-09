@@ -1,0 +1,10 @@
+spring:
+    mail:
+        host: host
+        port: 587
+        user: email address
+        password: password
+        protocol: smtp
+        tls: true
+        auth: true
+        from: from adress

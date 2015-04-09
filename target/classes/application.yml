@@ -1,0 +1,10 @@
+spring:
+    mail:
+        host: smtp.mandrillapp.com
+        port: 587
+        user: nil.nicklas@gmail.com
+        password: JiCu_IgUxDdLWnTRw3dDIQ
+        protocol: smtp
+        tls: true
+        auth: true
+        from: nilsson.nicklas@live.se

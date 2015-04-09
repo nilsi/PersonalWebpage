@@ -2,7 +2,7 @@
 
 This repo contains the code of my personal webpage [www.nicklasnilsson.com](www.nicklasnilsson.com) hosted on heroku.
 
-#### It is built using:
+###### Built using:
 
 - Spring Boot with Maven
 - Hibernate, Spring Data and Postgres
@@ -10,10 +10,17 @@ This repo contains the code of my personal webpage [www.nicklasnilsson.com](www.
 - Bootstrap, animate.css
 - Leaflet, D3
 
-Running the Front End is possible by browsing to the yo folder and run it by:
-``` $ grunt serve ```
+###### Running the Front End (in yo folder):
 
-Run the full application by configuring the `application.properties` and the `application.yml` and the run it by:
+```
+$ grunt serve
+```
 
-```$ mvn spring-boot:run```
+###### Running the full application (from root folder):
+
+Configure `application.properties` and the `application.yml` and run by:
+
+```
+$ mvn spring-boot:run
+```
 

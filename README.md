@@ -1,4 +1,4 @@
-# nicklas-webpage
+# Personal Webpage
 
 This repo contains the code of my personal webpage [http://www.nicklasnilsson.com](www.nicklasnilsson.com) hosted on heroku.
 

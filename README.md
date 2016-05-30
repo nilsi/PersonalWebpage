@@ -1,16 +1,16 @@
 # nicklas-webpage
 
-This repo contains the code of my personal webpage [www.nicklasnilsson.com](www.nicklasnilsson.com) hosted on heroku.
+This repo contains the code of my personal webpage [http://www.nicklasnilsson.com](www.nicklasnilsson.com) hosted on heroku.
 
 ##### Built using:
 
 - Spring Boot with Maven
 - Hibernate, Spring Data and Postgres
-- Yeoman, AngularJs, Grunt
+- Yeoman, AngularJS, Grunt
 - Bootstrap, animate.css
 - Leaflet, D3
 
-##### Running the Front End (in yo folder):
+##### Running the Front End (in the yo folder):
 
 ```
 $ grunt serve
